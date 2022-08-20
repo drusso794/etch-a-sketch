@@ -1,0 +1,21 @@
+.grids {
+    height: 30px;
+    width: 30px;
+    background-color: aqua;
+    border-style: solid;
+    border-width: thin;
+}
+
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(16, 30px);
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
