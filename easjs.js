@@ -8,10 +8,15 @@ resize.addEventListener('click', () => {
 });
 
 function resizeGrid() {
-    let area = prompt("How many rows on the grid? 100 max!");
+    let area = prompt("How many rows on the grid? 1-100!");
+    if (area < 101 && area > 0) {
     container.style.gridElementRows = `repeat(${area}, 1fr)`;
     container.style.gridElementColumns = `repeat(${area}, 1fr)`;
     createGrid(area);
+    } else {
+        alert("try again");
+        resizeGrid();
+    }
 };
 
 function createGrid(size) {
@@ -21,7 +26,7 @@ function createGrid(size) {
     for (let i = 0; i < size*size; i++) {
         let cell = document.createElement("div");
         cell.classList.add("cell");
-        cell.style.backgroundColor = "aqua";
+        cell.style.backgroundColor = "gainsboro";
         cell.style.border = "1px solid black";
         container.appendChild(cell);
         cell.addEventListener('mouseover', e => {
@@ -31,7 +36,7 @@ function createGrid(size) {
         function clearGrid() {
             const gridCell = document.querySelectorAll('.cell');
             resize.addEventListener('click', e => {
-                cell.style.backgroundColor = "aqua";
+                cell.style.backgroundColor = "gainsboro";
                 gridCell.forEach(cell => {
                     cell.remove();
                 })
