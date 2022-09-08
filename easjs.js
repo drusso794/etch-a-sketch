@@ -27,7 +27,7 @@ function createGrid(size) {
         let cell = document.createElement("div");
         cell.classList.add("cell");
         cell.style.backgroundColor = "gainsboro";
-        cell.style.border = "1px solid black";
+        //cell.style.border = "1px solid black";
         container.appendChild(cell);
         cell.addEventListener('mouseover', e => {
             cell.style.backgroundColor = "black";
